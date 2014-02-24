@@ -17,7 +17,7 @@
 				<action>
 					<changeDirection>
 						<direction type="aim">0</direction>
-						<term>45-$rank*30</term>
+						<term>0</term>
 					</changeDirection>
 					<wait>5</wait>
 				</action>
