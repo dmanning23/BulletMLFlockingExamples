@@ -13,13 +13,13 @@
 		<speed>2</speed>
 		<action>
 			<repeat>
-				<times>12</times>
+				<times>9999</times>
 				<action>
 					<changeDirection>
 						<direction type="aim">0</direction>
 						<term>0</term>
 					</changeDirection>
-					<wait>5</wait>
+					<wait>1</wait>
 				</action>
 			</repeat>
 		</action>
