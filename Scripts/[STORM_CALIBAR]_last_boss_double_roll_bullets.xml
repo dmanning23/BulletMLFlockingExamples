@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<!DOCTYPE bulletml SYSTEM "bulletml.dtd">
+
+<bulletml
+          xmlns="http://www.asahi-net.or.jp/~cs8k-cyu/bulletml">
+
+	<action label="rollShots">
+		<repeat>
+			<times>$1</times>
+			<action>
+				<fire>
+					<direction type="sequence">-1 * ($2 * $3)</direction>
+					<speed>1</speed>
+					<bullet>
+						<action>
+							<changeDirection>
+								<direction type="relative">180</direction>
+								<term>0</term>
+							</changeDirection>
+							
+							<wait>30+$rand*20</wait>
+
+							<changeSpeed>
+								<speed type="relative">2</speed>
+								<term>30</term>
+							</changeSpeed>
+
+							<repeat>
+								<times>9999</times>
+								<action>
+									<changeDirection>
+										<direction type="aim">0</direction>
+										<term>0</term>
+									</changeDirection>
+									<wait>1</wait>
+								</action>
+							</repeat>
+							
+							<wait>480 + ($rank * 120)</wait>
+							<vanish/>
+						</action>
+					</bullet>
+				</fire>
+				<wait>8</wait>
+			</action>
+		</repeat>
+	</action>
+
+	<action label="top1">
+		<actionRef label="rollShots">
+			<!--number of bullets to shoot-->
+			<param>3 + ($rank * 3)</param>
+			<!--amount of rotation based on num bullets-->
+			<param>(360 / 2) / (3 + ($rank * 3))</param>
+			<param>1</param>
+		</actionRef>
+	</action>
+
+	<action label="top2">
+		<actionRef label="rollShots">
+			<!--number of bullets to shoot-->
+			<param>3 + ($rank * 3)</param>
+			<!--amount of rotation based on num bullets-->
+			<param>(360 / 2) / (3 + ($rank * 3)</param>
+			<param>-1</param>
+		</actionRef>
+	</action>
+
+</bulletml>

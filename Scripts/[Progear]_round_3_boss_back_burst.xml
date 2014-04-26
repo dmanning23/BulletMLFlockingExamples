@@ -4,47 +4,44 @@
 <bulletml type="horizontal"
           xmlns="http://www.asahi-net.or.jp/~cs8k-cyu/bulletml">
 
-<action label="top">
-<repeat> <times>200</times>
-<action>
- <fire>
-  <direction type="absolute">220+$rand*100</direction>
-  <bulletRef label="backBurst"/>
- </fire>
- <wait>4-$rank*2</wait>
-</action>
-</repeat>
-<wait>60</wait>
-</action>
+	<action label="top">
+		<repeat>
+			<times>10</times>
+			<action>
+				<fire>
+					<!--shoot over a 90 degree arc behind this dude-->
+					<direction type="relative">225 - ($rand * 90)</direction>
+					<bulletRef label="backBurst"/>
+				</fire>
+				<wait>4-$rank*2</wait>
+			</action>
+		</repeat>
+		<wait>60</wait>
+	</action>
 
-<bullet label="backBurst">
-<speed>1.2</speed>
-<action>
-<changeSpeed>
- <speed>0</speed>
- <term>80</term>
-</changeSpeed>
-<wait>60+$rand*20</wait>
-<repeat> <times>2</times>
-<action>
- <fire>
- <direction type="absolute">60+$rand*60</direction>
- <bulletRef label="downAccel"/>
- </fire>
-</action>
-</repeat>
-<vanish/>
-</action>
-</bullet>
+	<bullet label="backBurst">
+		<speed>3</speed>
+		<action>
+			<wait>30+$rand*20</wait>
 
-<bullet label="downAccel">
-<speed>1.8</speed>
-<action>
-<accel>
- <horizontal type="relative">-7</horizontal>
- <term>250</term>
-</accel>
-</action>
-</bullet>
+			<changeSpeed>
+				<speed type="relative">2</speed>
+				<term>30</term>
+			</changeSpeed>
 
+			<repeat>
+				<times>9999</times>
+				<action>
+					<changeDirection>
+						<direction type="aim">0</direction>
+						<term>0</term>
+					</changeDirection>
+					<wait>1</wait>
+				</action>
+			</repeat>
+			
+			<wait>480 + ($rank * 120)</wait>
+			<vanish/>
+		</action>
+	</bullet>
 </bulletml>
