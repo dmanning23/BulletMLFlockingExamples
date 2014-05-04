@@ -10,7 +10,7 @@
 			<action>
 				<fire>
 					<direction type="sequence">-1 * ($2 * $3)</direction>
-					<speed>1</speed>
+					<speed>10</speed>
 					<bullet>
 						<action>
 							<changeDirection>
@@ -21,7 +21,7 @@
 							<wait>30+$rand*20</wait>
 
 							<changeSpeed>
-								<speed type="relative">2</speed>
+								<speed type="relative">20</speed>
 								<term>30</term>
 							</changeSpeed>
 
@@ -41,7 +41,7 @@
 						</action>
 					</bullet>
 				</fire>
-				<wait>8</wait>
+				<wait>2</wait>
 			</action>
 		</repeat>
 	</action>
