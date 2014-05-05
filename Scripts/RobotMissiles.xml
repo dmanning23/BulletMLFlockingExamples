@@ -10,7 +10,7 @@
 			<action>
 				<fire>
 					<!--shoot over a 90 degree arc behind this dude-->
-					<direction type="relative">225 - ($rand * 90)</direction>
+					<direction type="relative">45 - ($rand * 90)</direction>
 					<bulletRef label="backBurst"/>
 				</fire>
 				<wait>4-$rank*2</wait>

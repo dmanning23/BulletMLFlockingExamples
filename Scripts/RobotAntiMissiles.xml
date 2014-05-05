@@ -13,10 +13,10 @@
 					<speed>5</speed>
 					<bullet>
 						<action>
-							<changeDirection>
+							<!--<changeDirection>
 								<direction type="relative">180</direction>
 								<term>0</term>
-							</changeDirection>
+							</changeDirection>-->
 
 							<wait>30+$rand*20</wait>
 
