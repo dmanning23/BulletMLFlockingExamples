@@ -10,7 +10,7 @@
 			<action>
 				<fire>
 					<direction type="sequence">-1 * ($2 * $3)</direction>
-					<speed>5</speed>
+					<speed>15</speed>
 					<bullet>
 						<action>
 							<!--<changeDirection>
@@ -26,7 +26,8 @@
 							</changeSpeed>
 
 							<repeat>
-								<times>9999</times>
+								<!--<wait>480 + ($rank * 120)</wait>-->
+								<times>120</times>
 								<action>
 									<changeDirection>
 										<direction type="aim">0</direction>
@@ -36,8 +37,6 @@
 								</action>
 							</repeat>
 
-							<!--<wait>480 + ($rank * 120)</wait>-->
-							<wait>120</wait>
 							<vanish/>
 						</action>
 					</bullet>
