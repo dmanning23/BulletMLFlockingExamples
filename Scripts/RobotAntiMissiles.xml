@@ -13,11 +13,6 @@
 					<speed>15</speed>
 					<bullet>
 						<action>
-							<!--<changeDirection>
-								<direction type="relative">180</direction>
-								<term>0</term>
-							</changeDirection>-->
-
 							<wait>30+$rand*20</wait>
 
 							<changeSpeed>
@@ -26,8 +21,7 @@
 							</changeSpeed>
 
 							<repeat>
-								<!--<wait>480 + ($rank * 120)</wait>-->
-								<times>120</times>
+								<times>190 + (40 * $tier)</times>
 								<action>
 									<changeDirection>
 										<direction type="aim">0</direction>
@@ -37,11 +31,12 @@
 								</action>
 							</repeat>
 
+							<wait>10</wait>
 							<vanish/>
 						</action>
 					</bullet>
 				</fire>
-				<wait>2</wait>
+				<wait>4</wait>
 			</action>
 		</repeat>
 	</action>
@@ -49,9 +44,9 @@
 	<action label="top1">
 		<actionRef label="rollShots">
 			<!--number of bullets to shoot-->
-			<param>3 + ($rank * 3)</param>
+			<param>1 + ($tier * 6)</param>
 			<!--amount of rotation based on num bullets-->
-			<param>(360 / 2) / (3 + ($rank * 3))</param>
+			<param>(360 / 2) / (1 + ($tier * 6))</param>
 			<param>1</param>
 		</actionRef>
 	</action>
@@ -59,9 +54,9 @@
 	<action label="top2">
 		<actionRef label="rollShots">
 			<!--number of bullets to shoot-->
-			<param>3 + ($rank * 3)</param>
+			<param>1 + ($tier * 6)</param>
 			<!--amount of rotation based on num bullets-->
-			<param>(360 / 2) / (3 + ($rank * 3)</param>
+			<param>(360 / 2) / (1 + ($tier * 6))</param>
 			<param>-1</param>
 		</actionRef>
 	</action>

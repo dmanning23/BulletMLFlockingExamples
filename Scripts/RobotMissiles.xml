@@ -6,14 +6,13 @@
 
 	<action label="top">
 		<repeat>
-			<times>10</times>
+			<times>1 + ($tier * 15)</times>
 			<action>
 				<fire>
 					<!--shoot over a 90 degree arc behind this dude-->
 					<direction type="relative">45 - ($rand * 120)</direction>
 					<bulletRef label="backBurst"/>
 				</fire>
-				<!--<wait>4-$rank*2</wait>-->
 				<wait>1</wait>
 			</action>
 		</repeat>
@@ -22,7 +21,6 @@
 	<bullet label="backBurst">
 		<speed>10</speed>
 		<action>
-			<!--<wait>30+$rand*20</wait>-->
 			<wait>15+$rand*20</wait>
 
 			<changeSpeed>
@@ -31,8 +29,7 @@
 			</changeSpeed>
 
 			<repeat>
-				<!--<wait>480 + ($rank * 120)</wait>-->
-				<times>120</times>
+				<times>100 + (20 * $tier)</times>
 				<action>
 					<changeDirection>
 						<direction type="aim">0</direction>
@@ -42,6 +39,7 @@
 				</action>
 			</repeat>
 
+			<wait>10</wait>
 			<vanish/>
 		</action>
 	</bullet>
