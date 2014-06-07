@@ -9,9 +9,9 @@
 			<fire>
 				<direction type="relative">0</direction>
 				<bullet>
-					<speed>30 + (15 * $tier)</speed>
+					<speed>50 + (20 * $tier)</speed>
 					<action>
-						<wait>50 + (5 * $tier)</wait>
+						<wait>35 + (10 * $tier)</wait>
 						<vanish/>
 					</action>
 				</bullet>
