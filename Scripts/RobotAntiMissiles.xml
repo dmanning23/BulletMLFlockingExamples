@@ -4,43 +4,6 @@
 <bulletml
           xmlns="http://www.asahi-net.or.jp/~cs8k-cyu/bulletml">
 
-	<action label="rollShots">
-		<repeat>
-			<times>$1</times>
-			<action>
-				<fire>
-					<direction type="sequence">-1 * ($2 * $3)</direction>
-					<speed>15</speed>
-					<bullet>
-						<action>
-							<wait>30+$rand*20</wait>
-
-							<changeSpeed>
-								<speed type="relative">20</speed>
-								<term>30</term>
-							</changeSpeed>
-
-							<repeat>
-								<times>190 + (40 * $tier)</times>
-								<action>
-									<changeDirection>
-										<direction type="aim">0</direction>
-										<term>0</term>
-									</changeDirection>
-									<wait>1</wait>
-								</action>
-							</repeat>
-
-							<wait>10</wait>
-							<vanish/>
-						</action>
-					</bullet>
-				</fire>
-				<wait>4</wait>
-			</action>
-		</repeat>
-	</action>
-
 	<action label="top1">
 		<actionRef label="rollShots">
 			<!--number of bullets to shoot-->
@@ -60,5 +23,45 @@
 			<param>-1</param>
 		</actionRef>
 	</action>
+
+	<action label="rollShots">
+		<repeat>
+			<times>$1</times>
+			<action>
+				<fire>
+					<direction type="sequence">-1 * ($2 * $3)</direction>
+					<speed>15</speed>
+					<bulletRef label="backBurst"/>
+				</fire>
+				<wait>4</wait>
+			</action>
+		</repeat>
+	</action>
+
+	<bullet label="backBurst">
+		<speed>20</speed>
+		<action>
+			<wait>30+$rand*20</wait>
+
+			<changeSpeed>
+				<speed type="relative">10 + (15 * $tier)</speed>
+				<term>30</term>
+			</changeSpeed>
+
+			<repeat>
+				<times>80 + (40 * $tier)</times>
+				<action>
+					<changeDirection>
+						<direction type="aim">0</direction>
+						<term>0</term>
+					</changeDirection>
+					<wait>1</wait>
+				</action>
+			</repeat>
+
+			<wait>10</wait>
+			<vanish/>
+		</action>
+	</bullet>
 
 </bulletml>
