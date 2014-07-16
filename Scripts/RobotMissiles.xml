@@ -29,13 +29,13 @@
 			</changeSpeed>
 
 			<repeat>
-				<times>100 + (20 * $tier)</times>
+				<times>60 + (40 * $tier)</times>
 				<action>
 					<changeDirection>
 						<direction type="aim">0</direction>
 						<term>0</term>
 					</changeDirection>
-					<wait>1</wait>
+					<wait>2</wait>
 				</action>
 			</repeat>
 
