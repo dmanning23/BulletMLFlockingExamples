@@ -7,9 +7,9 @@
 	<action label="top1">
 		<actionRef label="rollShots">
 			<!--number of bullets to shoot-->
-			<param>2 + ($tier * 6)</param>
+			<param>($tier * 6)</param>
 			<!--amount of rotation based on num bullets-->
-			<param>(360 / 2) / (2 + ($tier * 6))</param>
+			<param>(360 / 2) / ($tier * 6)</param>
 			<param>1</param>
 		</actionRef>
 	</action>
@@ -17,9 +17,9 @@
 	<action label="top2">
 		<actionRef label="rollShots">
 			<!--number of bullets to shoot-->
-			<param>2 + ($tier * 6)</param>
+			<param>($tier * 6)</param>
 			<!--amount of rotation based on num bullets-->
-			<param>(360 / 2) / (2 + ($tier * 6))</param>
+			<param>(360 / 2) / ($tier * 6)</param>
 			<param>-1</param>
 		</actionRef>
 	</action>

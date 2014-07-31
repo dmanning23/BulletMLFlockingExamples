@@ -11,7 +11,7 @@
 				<bullet>
 					<speed>50 + (20 * $tier)</speed>
 					<action>
-						<wait>35 + (10 * $tier)</wait>
+						<wait>30 + (12 * $tier)</wait>
 						<vanish/>
 					</action>
 				</bullet>
